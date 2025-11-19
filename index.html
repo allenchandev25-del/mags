@@ -33,17 +33,18 @@
             align-items: center;
             justify-content: center;
             font-family: 'Segoe UI', sans-serif;
-            padding: 10px;
+            padding: 20px;
+            box-sizing: border-box;
         }
         
         .login-container .card {
-
             background: white;
-            padding: 40px;
+            padding: 30px;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 100%;
             max-width: 400px;
-            width: 350%;
+            box-sizing: border-box;
         }
         
         .logo {
@@ -87,6 +88,8 @@
             border: 2px solid #e9ecef;
             padding: 12px;
             font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .form-control:focus {
@@ -102,6 +105,8 @@
             background: #1e3c72;
             border: none;
             margin-top: 10px;
+            color: white;
+            cursor: pointer;
         }
         
         .btn-primary:hover {
@@ -125,6 +130,13 @@
             margin-top: 15px;
             text-align: center;
             display: none;
+            padding: 10px;
+        }
+        
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
         }
         
         .form-section {
@@ -144,62 +156,122 @@
             color: var(--text);
             line-height: 1.6;
             transition: background 0.3s, color 0.3s;
+            min-height: 100vh;
         }
         
         .top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 12px 20px;
             background: var(--top-bg);
             color: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
             position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             width: 100%;
             z-index: 1000;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            min-height: 70px;
         }
         
         .top h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: space-between;
         }
         
         .menu {
             display: flex;
-            gap: 20px;
+            gap: 15px;
+            margin: 0 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .menu a {
             color: white;
             text-decoration: none;
-            padding: 10px;
-            border-radius: 5px;
-            transition: background 0.3s;
+            padding: 8px 15px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            font-weight: 500;
+            white-space: nowrap;
         }
         
         .menu a:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .header-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-shrink: 0;
         }
         
         .theme-toggle {
-            background: none;
-            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
             cursor: pointer;
-            font-size: 18px;
-            padding: 10px;
-            border-radius: 5px;
-            transition: background 0.3s;
+            font-size: 14px;
+            padding: 8px 15px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
         
         .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .logout-btn {
             background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px 10px;
         }
         
         .body {
-            padding: 20px;
-            margin-top: 80px;
+            padding: 25px;
+            margin-top: 90px;
+            box-sizing: border-box;
+            width: 100%;
         }
         
         .box {
@@ -207,17 +279,24 @@
             padding: 25px;
             border-radius: 12px;
             margin-bottom: 25px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .box:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
         }
         
         .box h3 {
             margin-top: 0;
             color: var(--accent);
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
         
         label {
@@ -243,6 +322,7 @@
         input:focus, select:focus {
             border-color: var(--accent);
             outline: none;
+            box-shadow: 0 0 0 2px rgba(30, 60, 114, 0.2);
         }
         
         button {
@@ -253,11 +333,14 @@
             border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 10px;
         }
         
         button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
         
         .result {
@@ -283,6 +366,7 @@
             padding: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s;
+            box-sizing: border-box;
         }
         
         .graph:hover {
@@ -311,43 +395,168 @@
             font-size: 14px;
         }
         
+        .paybox {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .paybox img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        @media (max-width: 992px) {
+            .top {
+                padding: 10px 15px;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .menu {
+                margin: 10px 0;
+                gap: 10px;
+            }
+            
+            .header-controls {
+                justify-content: center;
+                margin-top: 10px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .top {
                 flex-direction: column;
+                padding: 10px;
+                min-height: auto;
+            }
+            
+            .top h1 {
+                font-size: 1.3rem;
+                margin-bottom: 10px;
                 text-align: center;
+            }
+            
+            .nav-container {
+                width: 100%;
             }
             
             .menu {
                 flex-direction: column;
-                gap: 10px;
-                margin-top: 10px;
+                gap: 8px;
+                margin: 10px 0;
+                width: 100%;
+                display: none;
+            }
+            
+            .menu.active {
+                display: flex;
+            }
+            
+            .menu a {
+                padding: 10px;
+                text-align: center;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .header-controls {
+                flex-direction: column;
+                width: 100%;
+                gap: 8px;
+            }
+            
+            .theme-toggle, .logout-btn {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+            }
+            
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 15px;
+                top: 15px;
             }
             
             .body {
-                margin-top: 0;
+                margin-top: 120px;
+                padding: 15px;
+            }
+            
+            .box {
+                padding: 20px;
+            }
+            
+            .box h3 {
+                font-size: 1.3rem;
             }
             
             .graphs {
                 flex-direction: column;
             }
+            
+            .graph {
+                min-width: 100%;
+            }
+            
+            .login-container .card {
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: 1.5rem;
+            }
+            
+            .form-title {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .top h1 {
+                font-size: 1.2rem;
+            }
+            
+            .body {
+                padding: 10px;
+                margin-top: 130px;
+            }
+            
+            .box {
+                padding: 15px;
+            }
+            
+            .graph-img {
+                height: 150px;
+            }
+            
+            .login-container {
+                padding: 10px;
+            }
+            
+            .login-container .card {
+                padding: 15px;
+            }
         }
         
         .dashboard {
             display: none;
+            width: 100%;
         }
         
-        .logout-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
         
-        .logout-btn:hover {
+        .menu a.active {
             background: rgba(255, 255, 255, 0.2);
+            font-weight: 600;
         }
     </style>
 </head>
@@ -429,17 +638,22 @@
 
     <div id="dashboard" class="dashboard">
         <div class="top">
-            <h1>Energy Bill</h1>
-            <nav class="menu">
-                <a href="#userinfo">User Info</a>
-                <a href="#usage">Energy Usage</a>
-                <a href="#graphs">Usage Graphs</a>
-                <a href="#carbon">Carbon Footprint</a>
-                <a href="#payment">Payment</a>
-            </nav>
-            <div>
-                <button class="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
-                <button class="logout-btn" onclick="logout()">Logout</button>
+            <h1>Energy Bill Calculator</h1>
+            <button class="menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-container">
+                <nav class="menu" id="mainMenu">
+                    <a href="#userinfo" class="active">User Info</a>
+                    <a href="#usage">Energy Usage</a>
+                    <a href="#graphs">Usage Graphs</a>
+                    <a href="#carbon">Carbon Footprint</a>
+                    <a href="#payment">Payment</a>
+                </nav>
+                <div class="header-controls">
+                    <button class="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                </div>
             </div>
         </div>
 
@@ -528,6 +742,28 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.innerWidth <= 768) {
+                document.body.classList.add('mobile-device');
+            }
+            
+            if (localStorage.getItem('loggedIn') === 'true') {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                
+                const savedName = localStorage.getItem('userName');
+                const savedId = localStorage.getItem('userId');
+                if (savedName) {
+                    document.getElementById('savename').textContent = savedName;
+                }
+                if (savedId) {
+                    document.getElementById('saveid').textContent = savedId;
+                }
+            }
+            
+            setupMenuHighlighting();
+        });
+
         function showSignup() {
             document.getElementById('signin').classList.remove('active');
             document.getElementById('signup').classList.add('active');
@@ -561,6 +797,7 @@
             if (email === 'mags@gmail.com' && password === 'magsweb') {
                 document.getElementById('loginPage').style.display = 'none';
                 document.getElementById('dashboard').style.display = 'block';
+                localStorage.setItem('loggedIn', 'true');
             } else {
                 error.textContent = 'Invalid email or password';
                 error.style.display = 'block';
@@ -599,6 +836,7 @@
             document.getElementById('loginPage').style.display = 'flex';
             document.getElementById('email').value = '';
             document.getElementById('password').value = '';
+            localStorage.removeItem('loggedIn');
         }
 
         function toggleTheme() {
@@ -608,6 +846,43 @@
             
             body.dataset.theme = newTheme;
             document.querySelector('.theme-toggle').textContent = newTheme === 'light' ? 'Dark Mode' : 'Light Mode';
+            
+            localStorage.setItem('theme', newTheme);
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.dataset.theme = savedTheme;
+            document.querySelector('.theme-toggle').textContent = savedTheme === 'light' ? 'Dark Mode' : 'Light Mode';
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mainMenu');
+            menu.classList.toggle('active');
+        }
+
+        function setupMenuHighlighting() {
+            const sections = document.querySelectorAll('.box');
+            const menuItems = document.querySelectorAll('.menu a');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                menuItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href').substring(1) === current) {
+                        item.classList.add('active');
+                    }
+                });
+            });
         }
 
         function saveDetails() {
@@ -619,6 +894,10 @@
             }
             document.getElementById("savename").textContent = name;
             document.getElementById("saveid").textContent = id;
+            
+            localStorage.setItem('userName', name);
+            localStorage.setItem('userId', id);
+            
             highlightBox("userinfo");
         }
 
@@ -646,6 +925,11 @@
             const units = Number(document.getElementById("units").value);
             const outputElement = document.getElementById("billoutput");
             
+            if (!units || units < 0) {
+                alert("Please enter a valid number of units.");
+                return;
+            }
+            
             let bill = 0;
             if (units <= 100) {
                 bill = 0;
@@ -657,16 +941,24 @@
                 bill = (100 * 2.35) + (200 * 4.70) + ((units - 400) * 6.30);
             }
             outputElement.style.display = "block";
-            outputElement.innerHTML = `Total Bill: ₹${bill.toFixed(2)}`;
+            outputElement.innerHTML = `<h4>Total Bill: ₹${bill.toFixed(2)}</h4>`;
+            highlightBox("usage");
         }
 
         function calculateCarbon() {
             const units = Number(document.getElementById("carbonUnits").value);
+            
+            if (!units || units < 0) {
+                alert("Please enter a valid number of units.");
+                return;
+            }
+            
             const result = units * 0.82;
             document.getElementById("carbonresult").textContent = result.toFixed(2);
             const treesNeeded = Math.ceil(result / 21);
             document.getElementById("trees").textContent = treesNeeded;
             document.getElementById("carbonMessage").style.display = "block";
+            highlightBox("carbon");
         }
 
         function makePayment() {
