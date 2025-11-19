@@ -16,7 +16,7 @@ A comprehensive web application for calculating and analyzing energy consumption
 
 ## 🚀 Live Demo
 
-[Add your live demo link here]
+https://allenchandev25-del.github.io/mags/
 
 ## 📋 Prerequisites
 
